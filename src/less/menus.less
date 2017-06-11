@@ -1,0 +1,70 @@
+.eui-toolbar {
+    display: flex;
+    padding: 0 5px;
+
+    .eui-menu-group {
+        display: flex;
+        background: #f9f9f9;
+        border: 1px solid #f2f2f2;
+        border-radius: 5px;
+
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+
+        .eui-menu-item {
+
+            &:hover {
+                background: #f2f2f2;
+
+                i {
+                    color: #999;
+                }
+            }
+
+            &:not(:last-child) {
+                border-right: 1px solid #f2f2f2;
+            }
+        }
+        .eui-active {
+            i {
+                color: #1e88e5;
+            }
+            &:hover {
+                i {
+                    color: #1e88e5;
+                }
+            }
+        }
+    }
+
+    /* 单个菜单 */
+    .eui-menu-item {
+        position: relative;
+        z-index: 10001;
+        text-align: center;
+        padding: 4px 8px;
+        cursor: pointer;
+        
+        i {
+            font-size: 14px;
+            color: #999;
+        }
+
+        &:hover {
+            i {
+                color: #333;
+            }
+        }
+    }
+    .eui-active {
+        i {
+            color: #1e88e5;
+        }
+        &:hover {
+            i {
+                color: #1e88e5;
+            }
+        }
+    }
+}

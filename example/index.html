@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script  src="../lib/seditor.js"></script>
+    <style>
+        #wrap {
+            width: 800px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    5556
+    <div id="toolbar"></div>
+    <div id="wrap"></div>
+    <button id="get" draggable>GET</button>
+    <button id="set" draggable>SET</button>
+
+    <script>
+        var editor = new SEditor('#wrap', '#toolbar');
+        editor.create()
+        console.log(editor)
+
+        // console.log(SEditor.caches)
+        // document.querySelector('#get').addEventListener('click', function(){
+        //     console.log(editor.getContent())
+        // })
+        // SetBtn = document.querySelector('#set').addEventListener('click', function(){
+        //     editor.setContent('set: 1234', true)
+        // })
+        // console.log(SEditor.commands)
+    </script>
+</body>
+</html>
