@@ -2,7 +2,7 @@
   "name": "seditor",
   "version": "1.0.0",
   "description": "semple editor",
-  "main": "gulpfile.js",
+  "main": "lib/seditor.js",
   "directories": {
     "doc": "docs",
     "example": "example"
