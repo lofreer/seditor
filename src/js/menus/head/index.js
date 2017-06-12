@@ -18,15 +18,15 @@ class Head {
         // 初始化 droplist
         this.droplist = new DropList(this, {
             width: 100,
-            $title: Vm('p', {}, ['设置标题']),
+            title: Vm('p', {}, ['设置标题']),
             type: 'list', // droplist 以列表形式展示
             list: [
-                { $elem: Vm('h1', {}, ['H1']), value: '<h1>' },
-                { $elem: Vm('h2', {}, ['H2']), value: '<h2>' },
-                { $elem: Vm('h3', {}, ['H3']), value: '<h3>' },
-                { $elem: Vm('h4', {}, ['H4']), value: '<h4>' },
-                { $elem: Vm('h5', {}, ['H5']), value: '<h5>' },
-                { $elem: Vm('p', {}, ['正文']), value: '<p>' }
+                { elem: Vm('h1', {}, ['H1']), value: '<h1>' },
+                { elem: Vm('h2', {}, ['H2']), value: '<h2>' },
+                { elem: Vm('h3', {}, ['H3']), value: '<h3>' },
+                { elem: Vm('h4', {}, ['H4']), value: '<h4>' },
+                { elem: Vm('h5', {}, ['H5']), value: '<h5>' },
+                { elem: Vm('p', {}, ['正文']), value: '<p>' }
             ],
             onClick: (value) => {
                 // 注意 this 是指向当前的 Head 对象

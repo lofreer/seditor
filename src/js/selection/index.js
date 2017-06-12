@@ -56,7 +56,7 @@ class Selection {
         }
     }
 
-    // 选区的 $Elem
+    // 选区的 Elem
     getSelectionContainerElem(range) {
         range = range || this._currentRange
         let elem

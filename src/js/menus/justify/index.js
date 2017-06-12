@@ -19,12 +19,12 @@ class Justify {
         // 初始化 droplist
         this.droplist = new DropList(this, {
             width: 100,
-            $title: Vm('p', {}, ['对齐方式']),
+            title: Vm('p', {}, ['对齐方式']),
             type: 'list', // droplist 以列表形式展示
             list: [
-                { $elem: Vm('span', {}, [[Vm('i', {class: 'eicon eicon-justifyleft'}), '靠左']]), value: 'justifyLeft' },
-                { $elem: Vm('span', {}, [[Vm('i', {class: 'eicon eicon-justifycenter'}), '居中']]), value: 'justifyCenter' },
-                { $elem: Vm('span', {}, [[Vm('i', {class: 'eicon eicon-justifyright'}), '靠右']]), value: 'justifyRight' }
+                { elem: Vm('span', {}, [[Vm('i', {class: 'eicon eicon-justifyleft'}), ' 靠左']]), value: 'justifyLeft' },
+                { elem: Vm('span', {}, [[Vm('i', {class: 'eicon eicon-justifycenter'}), ' 居中']]), value: 'justifyCenter' },
+                { elem: Vm('span', {}, [[Vm('i', {class: 'eicon eicon-justifyright'}), ' 靠右']]), value: 'justifyRight' }
             ],
             onClick: (value) => {
                 // 注意 this 是指向当前的 List 对象

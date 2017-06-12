@@ -39,7 +39,7 @@ class Video {
                     // 模板
                     tpl: Vm('div', {}, [
                         Vm('input', {id: textValId, type: 'text', class: 'block', placeholder: '格式如：<iframe src=... ><\/iframe>'}),
-                        Vm('div', {class: 'w-e-button-container'}, [
+                        Vm('div', {class: 'eui-button-container'}, [
                             Vm('button', {id: btnId, class: 'right'}, ['插入'])
                         ])
                     ]),
@@ -49,8 +49,8 @@ class Video {
                             selector: '#' + btnId,
                             type: 'click',
                             fn: () => {
-                                const $text = document.querySelector('#' + textValId)
-                                const val = $text.value.trim()
+                                const text = document.querySelector('#' + textValId)
+                                const val = text.value.trim()
 
                                 // 测试用视频地址
                                 // <iframe height=498 width=510 src='http://player.youku.com/embed/XMjcwMzc3MzM3Mg==' frameborder=0 'allowfullscreen'></iframe>

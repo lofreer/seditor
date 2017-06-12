@@ -15,10 +15,10 @@ class DropList {
         const container = Vm('div', {class: 'eui-droplist'})
 
         // 标题
-        const $title = opt.$title
-        if ($title) {
-            $title.classList.add('eui-dp-title')
-            container.appendChild($title)
+        const title = opt.title
+        if (title) {
+            title.classList.add('eui-drop-title')
+            container.appendChild(title)
         }
 
         const list = opt.list || []
@@ -26,16 +26,16 @@ class DropList {
         const onClick = opt.onClick || _emptyFn
 
         // 加入 DOM 并绑定事件
-        const $list = Vm('ul', {class: (type === 'list' ? 'w-e-list' : 'w-e-block')})
-        container.appendChild($list)
+        const ul = Vm('ul', {class: (type === 'list' ? 'eui-drop-list' : 'eui-drop-block')})
+        container.appendChild(ul)
         list.forEach(item => {
-            const $elem = item.$elem
+            const elem = item.elem
             const value = item.value
-            const $li = Vm('li', {class: 'w-e-item'})
-            if ($elem) {
-                $li.appendChild($elem)
-                $list.appendChild($li)
-                $elem.addEventListener('click', e => {
+            const li = Vm('li', {class: 'eui-drop-item'})
+            if (elem) {
+                li.appendChild(elem)
+                ul.appendChild(li)
+                elem.addEventListener('click', e => {
                     onClick(value)
 
                     // 隐藏
@@ -81,7 +81,6 @@ class DropList {
             // 加入 DOM 之前先定位位置
             const menuHeight = menuELem.getBoundingClientRect().height || 0
             const width = this.opt.width || 100  // 默认为 100
-            console.log(container)
             container.style.cssText = `margin-top: ${menuHeight}px; width: ${width}px`
 
             // 加入到 DOM

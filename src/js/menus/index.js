@@ -22,6 +22,7 @@ class Menus {
         // 根据配置信息，创建菜单
         configMenus.forEach(menuKey => {
             let MenuConstructor
+            console.log(menuKey)
             if(Array.isArray(menuKey)) {
                 let group = []
                 menuKey.forEach(item => {
@@ -38,6 +39,7 @@ class Menus {
                 if (MenuConstructor && typeof MenuConstructor === 'function') {
                     // 创建单个菜单
                     this.menus[menuKey] = new MenuConstructor(editor)
+                    this.toolbar[menuKey] = this.menus[menuKey]
                 }
             }
             

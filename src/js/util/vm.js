@@ -1,3 +1,7 @@
+/*
+    虚拟DOM生成器
+*/
+
 class Vm {
     constructor(tagName, props = {}, children = []) {
         if (!(this.tagName = tagName)) return

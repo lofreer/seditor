@@ -6,16 +6,11 @@ const config = {
 
     // 默认菜单配置
     menus: [
-        ['head'],
-        ['bold', 'italic', 'underline', 'strikeThrough'],
-        ['foreColor', 'backColor'],
-        ['list', 'justify'],
-        ['quote', 'image', 'video', 'code'], 
-        ['undo', 'redo']
+        'head', 'bold', 'italic', 'underline', 'strikeThrough', 'foreColor', 'backColor', 'list', 'justify', 'quote', 'image', 'video', 'code', 'undo', 'redo'
     ],
 
     // 是否开启 debug 模式（debug 模式下错误会 throw error 形式抛出）
-    debug: true,
+    debug: false,
 
     // 是否显示添加网络图片的 tab
     showLinkImg: true,
@@ -27,7 +22,7 @@ const config = {
     uploadImgShowBase64: true,
 
     // 上传图片，server 地址（如果有值，则 base64 格式的配置则失效）
-    // uploadImgServer: '/upload',
+    // uploadImgServer: 'http://www.daily.bookln.cn/comm/file/upload.do',
 
     // 上传图片的自定义参数
     uploadImgParams: {
@@ -54,7 +49,7 @@ const config = {
 
         },
         fail: function (xhr, editor, result) {
-
+            
         },
         error: function (xhr, editor) {
 

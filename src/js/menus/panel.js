@@ -29,6 +29,15 @@ class Panel {
         const width = opt.width || 300 // 默认 300px
         const container = Vm('div', {class: 'eui-panel-wrap', style: `width: ${width}px; margin-left: ${(0-width)/2}px`})
 
+        // 添加关闭按钮
+        const closeBtn = Vm('span', {class: 'eui-panel-close'}, [
+            Vm('i', {class: 'eicon eicon-close'})
+        ])
+        container.appendChild(closeBtn)
+        closeBtn.addEventListener('click', () => {
+            this.hide()
+        })
+
         // 准备 tabs 容器
         // 设置高度
         const height = opt.height
@@ -49,42 +58,42 @@ class Panel {
             const tpl = tab.tpl || ''
 
             // 添加到 DOM
-            const $title = Vm('li', {class: 'eui-item'}, [title])
-            tabTitleContainer.appendChild($title)
-            const $content = tpl
-            tabContentContainer.appendChild($content)
+            const tabItem = Vm('li', {class: 'eui-tab-item'}, [title])
+            tabTitleContainer.appendChild(tabItem)
+            const content = tpl
+            tabContentContainer.appendChild(content)
 
             // 记录到内存
-            $title._index = tabIndex
-            tabTitleArr.push($title)
-            tabContentArr.push($content)
+            tabItem._index = tabIndex
+            tabTitleArr.push(tabItem)
+            tabContentArr.push(content)
 
             // 设置 active 项
             if (tabIndex === 0) {
-                $title._active = true
-                $title.classList.add('eui-active')
+                tabItem._active = true
+                tabItem.classList.add('eui-tab-active')
             } else {
-                $content.style.display = 'none'
+                content.style.display = 'none'
             }
 
             // 绑定 tab 的事件
-            $title.addEventListener('click', e => {
-                if ($title._active) {
+            tabItem.addEventListener('click', e => {
+                if (tabItem._active) {
                     return
                 }
                 // 隐藏所有的 tab
-                tabTitleArr.forEach($title => {
-                    $title._active = false
-                    $title.classList.remove('w-e-active')
+                tabTitleArr.forEach(tabItem => {
+                    tabItem._active = false
+                    tabItem.classList.remove('eui-tab-active')
                 })
-                tabContentArr.forEach($content => {
-                    $content.style.display = 'none'
+                tabContentArr.forEach(content => {
+                    content.style.display = 'none'
                 })
 
                 // 显示当前的 tab
-                $title._active = true
-                $title.classList.add('w-e-active')
-                $content.style.display = 'block'
+                tabItem._active = true
+                tabItem.classList.add('eui-tab-active')
+                content.style.display = 'block'
             })
         })
 
@@ -110,8 +119,8 @@ class Panel {
                 const selector = event.selector
                 const type = event.type
                 const fn = event.fn || emptyFn
-                const $content = tabContentArr[index]
-                $content.querySelector(selector).addEventListener(type, (e) => {
+                const content = tabContentArr[index]
+                content.querySelector(selector).addEventListener(type, (e) => {
                     e.stopPropagation()
                     const needToHide = fn(e)
                     // 执行完事件之后，是否要关闭 panel
@@ -123,9 +132,9 @@ class Panel {
         })
 
         // focus 第一个 elem
-        let $inputs = container.querySelectorAll('input[type=text],textarea')
-        if ($inputs.length) {
-            $inputs[0].focus()
+        let inputs = container.querySelectorAll('input[type=text],textarea')
+        if (inputs.length) {
+            inputs[0].focus()
         }
 
         // 添加到属性

@@ -21,18 +21,16 @@
     <button id="set" draggable>SET</button>
 
     <script>
-        var editor = new SEditor('#wrap', '#toolbar');
+        var editor = new SEditor('#wrap');
         editor.create()
         console.log(editor)
-
-        // console.log(SEditor.caches)
-        // document.querySelector('#get').addEventListener('click', function(){
-        //     console.log(editor.getContent())
-        // })
-        // SetBtn = document.querySelector('#set').addEventListener('click', function(){
-        //     editor.setContent('set: 1234', true)
-        // })
-        // console.log(SEditor.commands)
+        
+        document.querySelector('#get').addEventListener('click', function(){
+            console.log(editor.content.text())
+        })
+        document.querySelector('#set').addEventListener('click', function(){
+            editor.content.html('<p>543534534</p>')
+        })
     </script>
 </body>
 </html>

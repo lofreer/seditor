@@ -1,6 +1,8 @@
 .eui-toolbar,
 .eui-container,
 .eui-menu-panel {
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  font-size: 14px;
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
@@ -14,11 +16,6 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.w-e-clear-fix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
 
 .eui-menu-item .eui-droplist {
   position: absolute;
@@ -29,36 +26,37 @@
   border-right-color: #ccc;
   border-bottom-color: #ccc;
 }
-.eui-menu-item .eui-droplist .eui-dp-title {
+.eui-menu-item .eui-droplist .eui-drop-title {
   text-align: center;
   color: #999;
   line-height: 2;
   border-bottom: 1px solid #f1f1f1;
   font-size: 13px;
 }
-.eui-menu-item .eui-droplist ul.w-e-list {
+.eui-menu-item .eui-droplist ul.eui-drop-list {
   list-style: none;
   line-height: 1;
 }
-.eui-menu-item .eui-droplist ul.w-e-list li.w-e-item {
+.eui-menu-item .eui-droplist ul.eui-drop-list li.eui-drop-item {
+  line-height: 1.5;
   color: #333;
   padding: 5px 0;
 }
-.eui-menu-item .eui-droplist ul.w-e-list li.w-e-item:hover {
+.eui-menu-item .eui-droplist ul.eui-drop-list li.eui-drop-item:hover {
   background-color: #f1f1f1;
 }
-.eui-menu-item .eui-droplist ul.w-e-block {
+.eui-menu-item .eui-droplist ul.eui-drop-block {
   list-style: none;
   text-align: left;
   padding: 5px;
 }
-.eui-menu-item .eui-droplist ul.w-e-block li.w-e-item {
+.eui-menu-item .eui-droplist ul.eui-drop-block li.eui-drop-item {
   display: inline-block;
   *display: inline;
   *zoom: 1;
   padding: 3px 5px;
 }
-.eui-menu-item .eui-droplist ul.w-e-block li.w-e-item:hover {
+.eui-menu-item .eui-droplist ul.eui-drop-block li.eui-drop-item:hover {
   background-color: #f1f1f1;
 }
 
@@ -243,8 +241,23 @@
           box-shadow: 1px 1px 2px #ccc;
   color: #333;
   background-color: #fff;
-  /* 为 emotion panel 定制的样式 */
   /* 上传图片的 panel 定制样式 */
+}
+.eui-container .eui-panel-wrap .eui-panel-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5px;
+  margin: 2px 5px 0 0;
+  cursor: pointer;
+  color: #999;
+}
+.eui-container .eui-panel-wrap .eui-panel-close:hover {
+  color: #333;
+}
+.eui-container .eui-panel-wrap .eui-panel-close .eicon {
+  font-size: 12px;
+  font-weight: bold;
 }
 .eui-container .eui-panel-wrap .eui-panel-tab-title {
   list-style: none;
@@ -255,7 +268,7 @@
   margin: 2px 10px 0 10px;
   border-bottom: 1px solid #f1f1f1;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-title .w-e-item {
+.eui-container .eui-panel-wrap .eui-panel-tab-title .eui-tab-item {
   padding: 3px 5px;
   color: #999;
   cursor: pointer;
@@ -263,7 +276,7 @@
   position: relative;
   top: 1px;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-title .w-e-active {
+.eui-container .eui-panel-wrap .eui-panel-tab-title .eui-tab-active {
   color: #333;
   border-bottom: 1px solid #333;
   cursor: default;
@@ -309,7 +322,7 @@
 .eui-container .eui-panel-wrap .eui-panel-tab-content input[type=text]:focus {
   border-bottom: 2px solid #1e88e5;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-content .w-e-button-container button {
+.eui-container .eui-panel-wrap .eui-panel-tab-content .eui-button-container button {
   font-size: 14px;
   color: #1e88e5;
   border: none;
@@ -318,37 +331,32 @@
   cursor: pointer;
   border-radius: 3px;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-content .w-e-button-container button.left {
+.eui-container .eui-panel-wrap .eui-panel-tab-content .eui-button-container button.left {
   float: left;
   margin-right: 10px;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-content .w-e-button-container button.right {
+.eui-container .eui-panel-wrap .eui-panel-tab-content .eui-button-container button.right {
   float: right;
   margin-left: 10px;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-content .w-e-button-container button.gray {
+.eui-container .eui-panel-wrap .eui-panel-tab-content .eui-button-container button.gray {
   color: #999;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-content .w-e-button-container button.red {
+.eui-container .eui-panel-wrap .eui-panel-tab-content .eui-button-container button.red {
   color: #c24f4a;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-content .w-e-button-container button:hover {
+.eui-container .eui-panel-wrap .eui-panel-tab-content .eui-button-container button:hover {
   background-color: #f1f1f1;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-content .w-e-button-container:after {
+.eui-container .eui-panel-wrap .eui-panel-tab-content .eui-button-container:after {
   content: "";
   display: table;
   clear: both;
 }
-.eui-container .eui-panel-wrap .w-e-emoticon-container .w-e-item {
-  cursor: pointer;
-  font-size: 18px;
-  padding: 0 3px;
-}
-.eui-container .eui-panel-wrap .w-e-up-img-container {
+.eui-container .eui-panel-wrap .eui-up-img-container {
   text-align: center;
 }
-.eui-container .eui-panel-wrap .w-e-up-img-container .w-e-up-btn {
+.eui-container .eui-panel-wrap .eui-up-img-container .eui-up-btn {
   display: inline-block;
   *display: inline;
   *zoom: 1;
@@ -357,22 +365,23 @@
   font-size: 60px;
   line-height: 1;
 }
-.eui-container .eui-panel-wrap .w-e-up-img-container .w-e-up-btn:hover {
+.eui-container .eui-panel-wrap .eui-up-img-container .eui-up-btn:hover {
   color: #333;
+}
+.eui-container .eui-panel-wrap .eui-up-img-container .eui-up-btn .eicon {
+  font-size: 60px;
 }
 
 .eui-container {
   position: relative;
   z-index: 10000;
 }
-.eui-container .w-e-bar {
+.eui-container .eui-progress {
   position: absolute;
-  background-color: #f1f1f1;
-  padding: 2px 5px;
-  color: #666;
+  background-color: #1e88e5;
   bottom: 0;
   left: 0;
-  font-size: 12px;
+  height: 1px;
 }
 .eui-content {
   padding: 0 10px;
@@ -438,10 +447,10 @@
   -webkit-box-shadow: 0 0 5px #333;
           box-shadow: 0 0 5px #333;
 }
-.eui-content img.w-e-selected {
+.eui-content img.eui-selected {
   border: 2px solid #1e88e5;
 }
-.eui-content img.w-e-selected:hover {
+.eui-content img.eui-selected:hover {
   -webkit-box-shadow: none;
           box-shadow: none;
 }

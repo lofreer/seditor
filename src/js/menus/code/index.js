@@ -21,22 +21,22 @@ class Code {
 
     onClick(e) {
         const editor = this.editor
-        const $startElem = editor.selection.getSelectionStartElem()
-        const $endElem = editor.selection.getSelectionEndElem()
+        const startElem = editor.selection.getSelectionStartElem()
+        const endElem = editor.selection.getSelectionEndElem()
         const isSeleEmpty = editor.selection.isSelectionEmpty()
         const selectionText = editor.selection.getSelectionText()
-        let $code
+        let code
 
-        if ($startElem !== $endElem) {
+        if (startElem !== endElem) {
             // 跨元素选择，不做处理
             editor.selection.restoreSelection()
             return
         }
         if (!isSeleEmpty) {
             // 选取不是空，用 <code> 包裹即可
-            $code = Vm('code', {}, [selectionText])
-            editor.cmd.do('insertElem', $code)
-            editor.selection.createRangeByElem($code, false)
+            code = Vm('code', {}, [selectionText])
+            editor.cmd.do('insertElem', code)
+            editor.selection.createRangeByElem(code, false)
             editor.selection.restoreSelection()
             return
         }
@@ -44,7 +44,7 @@ class Code {
         // 选取是空，且没有夸元素选择，则插入 <pre><code></code></prev>
         if (this._active) {
             // 选中状态，将编辑内容
-            this._createPanel($startElem.html())
+            this._createPanel(startElem.html())
         } else {
             // 未选中状态，将创建内容
             this._createPanel()
@@ -68,7 +68,7 @@ class Code {
                     // 模板
                     tpl: Vm('div', {}, [
                         Vm('textarea', {id: textId, style: `height: 145px;`}, [value]),
-                        Vm('div', {class: 'w-e-button-container'}, [
+                        Vm('div', {class: 'eui-button-container'}, [
                             Vm('button', {id: btnId, class: 'right'}, ['插入'])
                         ])
                     ]),
@@ -115,11 +115,11 @@ class Code {
     // 更新代码
     _updateCode(value) {
         const editor = this.editor
-        const $selectionELem = editor.selection.getSelectionContainerElem()
-        if (!$selectionELem) {
+        const selectionELem = editor.selection.getSelectionContainerElem()
+        if (!selectionELem) {
             return
         }
-        $selectionELem.html(value)
+        selectionELem.html(value)
         editor.selection.restoreSelection()
     }
 
@@ -127,12 +127,12 @@ class Code {
     tryChangeActive(e) {
         const editor = this.editor
         const elem = this.elem
-        const $selectionELem = editor.selection.getSelectionContainerElem()
-        if (!$selectionELem) {
+        const selectionELem = editor.selection.getSelectionContainerElem()
+        if (!selectionELem) {
             return
         }
-        const $parentElem = $selectionELem.parentNode
-        if ($selectionELem.nodeName === 'CODE' && $parentElem.nodeName === 'PRE') {
+        const parentElem = selectionELem.parentNode
+        if (selectionELem.nodeName === 'CODE' && parentElem.nodeName === 'PRE') {
             this._active = true
             elem.classList.add('eui-active')
         } else {

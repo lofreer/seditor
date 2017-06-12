@@ -9,6 +9,25 @@
         color: #333;
         background-color: #fff;
 
+        .eui-panel-close {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 5px;
+            margin: 2px 5px 0 0;
+            cursor: pointer;
+            color: #999;
+
+            &:hover {
+                color: #333;
+            }
+            .eicon {
+                font-size: 12px;
+                font-weight: bold;
+            }
+        }
+
+
         .eui-panel-tab-title {
             list-style: none;
             display: flex;
@@ -16,7 +35,7 @@
             margin: 2px 10px 0 10px;
             border-bottom: 1px solid #f1f1f1;
 
-            .w-e-item {
+            .eui-tab-item {
                 padding: 3px 5px;
                 color: #999;
                 cursor: pointer;
@@ -25,7 +44,7 @@
                 top: 1px;
             }
 
-            .w-e-active {
+            .eui-tab-active {
                 color: #333;
                 border-bottom: 1px solid #333;
                 cursor: default;
@@ -77,7 +96,7 @@
             }
 
             /* 按钮的样式 */
-            .w-e-button-container {
+            .eui-button-container {
                 button {
                     font-size: 14px;
                     color: #1e88e5;
@@ -109,27 +128,18 @@
                     background-color: #f1f1f1;
                 }
             } 
-            .w-e-button-container:after {
+            .eui-button-container:after {
                 content: "";
                 display: table;
                 clear: both;
             }
         }
 
-        /* 为 emotion panel 定制的样式 */
-        .w-e-emoticon-container {
-            .w-e-item {
-                cursor: pointer;
-                font-size: 18px;
-                padding: 0 3px;
-            }
-        }
-
         /* 上传图片的 panel 定制样式 */
-        .w-e-up-img-container {
+        .eui-up-img-container {
             text-align: center;
 
-            .w-e-up-btn {
+            .eui-up-btn {
                 display: inline-block;
                 color: #999;
                 cursor: pointer;
@@ -138,6 +148,10 @@
 
                 &:hover {
                     color: #333;
+                }
+
+                .eicon {
+                    font-size: 60px;
                 }
             }
         }

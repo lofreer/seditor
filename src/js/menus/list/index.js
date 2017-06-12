@@ -19,11 +19,11 @@ class List {
         // 初始化 droplist
         this.droplist = new DropList(this, {
             width: 120,
-            $title: Vm('p', {}, ['设置列表']),
+            title: Vm('p', {}, ['设置列表']),
             type: 'list', // droplist 以列表形式展示
             list: [
-                { $elem: Vm('span', {}, [Vm('i', {class: 'eicon eicon-insertorderedlist'}), '有序列表']), value: 'insertOrderedList' },
-                { $elem: Vm('span', {}, [Vm('i', {class: 'eicon eicon-insertunorderedlist'}), '无序列表']), value: 'insertUnorderedList' }
+                { elem: Vm('span', {}, [Vm('i', {class: 'eicon eicon-insertorderedlist'}), ' 有序列表']), value: 'insertOrderedList' },
+                { elem: Vm('span', {}, [Vm('i', {class: 'eicon eicon-insertunorderedlist'}), ' 无序列表']), value: 'insertUnorderedList' }
             ],
             onClick: (value) => {
                 // 注意 this 是指向当前的 List 对象
@@ -43,25 +43,23 @@ class List {
         editor.cmd.do(value)
 
         // 验证列表是否被包裹在 <p> 之内
-        let $selectionElem = editor.selection.getSelectionContainerElem()
-        if ($selectionElem.nodeName === 'LI') {
-            $selectionElem = $selectionElem.parentNode
+        let selectionElem = editor.selection.getSelectionContainerElem()
+        if (selectionElem.nodeName === 'LI') {
+            selectionElem = selectionElem.parentNode
         }
-        if (/^ol|ul$/i.test($selectionElem.nodeName) === false) {
+        if (/^ol|ul$/i.test(selectionElem.nodeName) === false) {
             return
         }
-        if ($selectionElem === textElem) {
+        if (selectionElem === textElem) {
             // 证明是顶级标签，没有被 <p> 包裹
             return
         }
-        const $parent = $selectionElem.parentNode
-        if ($parent === textElem) {
-            // $parent 是顶级标签，不能删除
-            return
-        }
+        const parent = selectionElem.parentNode
+        // parent 是顶级标签，不能删除
+        if (parent === textElem) return
 
-        $parent.parentNode.appendChild($selectionElem)
-        $parent.remove()
+        parent.parentNode.appendChild(selectionElem)
+        parent.remove()
     }
 
     // 试图改变 active 状态

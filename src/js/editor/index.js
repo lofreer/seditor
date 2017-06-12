@@ -67,7 +67,6 @@ class Editor {
         textContainerElem.appendChild(textElem)
 
         // 记录属性
-        console.log(toolbarElem)
         this.toolbarElem = toolbarElem
         this.textContainerElem = textContainerElem
         this.textElem = textElem
@@ -102,8 +101,8 @@ class Editor {
 
     // 添加 text 区域
     _initText() {
-        this.txt = new Text(this)
-        this.txt.init()
+        this.content = new Text(this)
+        this.content.init()
     }
 
     // 创建编辑器

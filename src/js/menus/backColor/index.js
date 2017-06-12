@@ -21,11 +21,11 @@ class BackColor {
         // 初始化 droplist
         this.droplist = new DropList(this, {
             width: 120,
-            $title: Vm('p', {}, ['背景色']),
+            title: Vm('p', {}, ['背景色']),
             type: 'inline-block', // droplist 内容以 block 形式展示
             list: colors.map(color => {
                 return {
-                    $elem: Vm('i', {class: 'eicon eicon-backcolor', style: `color: ${color}`}),
+                    elem: Vm('i', {class: 'eicon eicon-backcolor', style: `color:${color}`}),
                     value: color
                 }
             }),
