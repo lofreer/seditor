@@ -1,14 +1,11 @@
 {
   "name": "seditor",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "semple editor",
   "main": "lib/seditor.js",
   "directories": {
     "doc": "docs",
     "example": "example"
-  },
-  "dependencies": {
-    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "browserify": "^14.4.0",

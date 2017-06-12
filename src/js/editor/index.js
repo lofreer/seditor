@@ -46,7 +46,9 @@ class Editor {
         } else {
             // toolbar 和 text 的选择器都有值，记录属性
             toolbarElem = document.querySelector(toolbarSelector)
+            toolbarElem.classList.add('eui-toolbar')
             textContainerElem = document.querySelector(textSelector)
+            textContainerElem.classList.add('eui-container')
             // 将编辑器区域原有的内容，暂存起来
             defaultContent = textContainerElem.innerHTML
         }
