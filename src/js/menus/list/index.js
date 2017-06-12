@@ -68,10 +68,10 @@ class List {
         const elem = this.elem
         if (editor.cmd.queryCommandState('insertUnOrderedList') || editor.cmd.queryCommandState('insertOrderedList')) {
             this._active = true
-            elem.classList.add('w-e-active')
+            elem.classList.add('eui-active')
         } else {
             this._active = false
-            elem.classList.remove('w-e-active')
+            elem.classList.remove('eui-active')
         }
     }
 }

@@ -22,7 +22,6 @@ class Menus {
         // 根据配置信息，创建菜单
         configMenus.forEach(menuKey => {
             let MenuConstructor
-            console.log(menuKey)
             if(Array.isArray(menuKey)) {
                 let group = []
                 menuKey.forEach(item => {

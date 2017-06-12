@@ -14,14 +14,16 @@
     </style>
 </head>
 <body>
-    5556
     <div id="toolbar"></div>
-    <div id="wrap"></div>
+    <div id="wrap">text</div>
     <button id="get" draggable>GET</button>
     <button id="set" draggable>SET</button>
 
     <script>
         var editor = new SEditor('#wrap');
+        editor.customConfig.onchange = function(html, editor) {
+            console.log(editor)
+        }
         editor.create()
         console.log(editor)
         

@@ -173,9 +173,8 @@ class Text {
         const textElem = editor.textElem
 
         textElem.addEventListener('keydown', e => {
-            if (e.keyCode !== 8) {
-                return
-            }
+            if (e.keyCode !== 8) return
+            
             const txtHtml = textElem.innerHTML.toLowerCase().trim()
             if (txtHtml === '<p><br></p>') {
                 // 最后剩下一个空行，就不再删除了

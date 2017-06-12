@@ -22,9 +22,13 @@ class Command {
         }
         // 修改菜单状态
         editor.menus.changeActive()
+        
         // 恢复选区保证光标在原来的位置闪烁 
         editor.selection.saveRange()
         editor.selection.restoreSelection() 
+
+        // 触发 onchange
+        editor.change && editor.change()
     }
     // 自定义 insertHTML 事件
     _insertHTML(html) {
