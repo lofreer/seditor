@@ -231,7 +231,7 @@
   color: #1e88e5;
 }
 
-.eui-container .eui-panel-wrap {
+.eui-panel-wrap {
   position: absolute;
   top: 0;
   left: 50%;
@@ -243,7 +243,7 @@
   background-color: #fff;
   /* 上传图片的 panel 定制样式 */
 }
-.eui-container .eui-panel-wrap .eui-panel-close {
+.eui-panel-wrap .eui-panel-close {
   position: absolute;
   right: 0;
   top: 0;
@@ -252,14 +252,14 @@
   cursor: pointer;
   color: #999;
 }
-.eui-container .eui-panel-wrap .eui-panel-close:hover {
+.eui-panel-wrap .eui-panel-close:hover {
   color: #333;
 }
-.eui-container .eui-panel-wrap .eui-panel-close .eicon {
+.eui-panel-wrap .eui-panel-close .eicon {
   font-size: 12px;
   font-weight: bold;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-title {
+.eui-panel-wrap .eui-panel-tab-title {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -268,7 +268,7 @@
   margin: 2px 10px 0 10px;
   border-bottom: 1px solid #f1f1f1;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-title .eui-tab-item {
+.eui-panel-wrap .eui-panel-tab-title .eui-tab-item {
   padding: 3px 5px;
   color: #999;
   cursor: pointer;
@@ -276,32 +276,32 @@
   position: relative;
   top: 1px;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-title .eui-tab-active {
+.eui-panel-wrap .eui-panel-tab-title .eui-tab-active {
   color: #333;
   border-bottom: 1px solid #333;
   cursor: default;
   font-weight: 700;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-content {
+.eui-panel-wrap .eui-panel-tab-content {
   padding: 10px 15px 10px 15px;
   font-size: 16px;
   /* 输入框的样式 */
   /* 按钮的样式 */
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-content input:focus,
-.eui-container .eui-panel-wrap .eui-panel-tab-content textarea:focus,
-.eui-container .eui-panel-wrap .eui-panel-tab-content button:focus {
+.eui-panel-wrap .eui-panel-tab-content input:focus,
+.eui-panel-wrap .eui-panel-tab-content textarea:focus,
+.eui-panel-wrap .eui-panel-tab-content button:focus {
   outline: none;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-content textarea {
+.eui-panel-wrap .eui-panel-tab-content textarea {
   width: 100%;
   border: 1px solid #ccc;
   padding: 5px;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-content textarea:focus {
+.eui-panel-wrap .eui-panel-tab-content textarea:focus {
   border-color: #1e88e5;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-content input[type=text] {
+.eui-panel-wrap .eui-panel-tab-content input[type=text] {
   border: none;
   border-bottom: 1px solid #ccc;
   font-size: 14px;
@@ -310,19 +310,19 @@
   padding: 10px 5px;
   text-align: left;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-content input[type=text].small {
+.eui-panel-wrap .eui-panel-tab-content input[type=text].small {
   width: 30px;
   text-align: center;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-content input[type=text].block {
+.eui-panel-wrap .eui-panel-tab-content input[type=text].block {
   display: block;
   width: 100%;
   margin: 10px 0;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-content input[type=text]:focus {
+.eui-panel-wrap .eui-panel-tab-content input[type=text]:focus {
   border-bottom: 2px solid #1e88e5;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-content .eui-button-container button {
+.eui-panel-wrap .eui-panel-tab-content .eui-button-container button {
   font-size: 14px;
   color: #1e88e5;
   border: none;
@@ -331,32 +331,32 @@
   cursor: pointer;
   border-radius: 3px;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-content .eui-button-container button.left {
+.eui-panel-wrap .eui-panel-tab-content .eui-button-container button.left {
   float: left;
   margin-right: 10px;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-content .eui-button-container button.right {
+.eui-panel-wrap .eui-panel-tab-content .eui-button-container button.right {
   float: right;
   margin-left: 10px;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-content .eui-button-container button.gray {
+.eui-panel-wrap .eui-panel-tab-content .eui-button-container button.gray {
   color: #999;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-content .eui-button-container button.red {
+.eui-panel-wrap .eui-panel-tab-content .eui-button-container button.red {
   color: #c24f4a;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-content .eui-button-container button:hover {
+.eui-panel-wrap .eui-panel-tab-content .eui-button-container button:hover {
   background-color: #f1f1f1;
 }
-.eui-container .eui-panel-wrap .eui-panel-tab-content .eui-button-container:after {
+.eui-panel-wrap .eui-panel-tab-content .eui-button-container:after {
   content: "";
   display: table;
   clear: both;
 }
-.eui-container .eui-panel-wrap .eui-up-img-container {
+.eui-panel-wrap .eui-up-img-container {
   text-align: center;
 }
-.eui-container .eui-panel-wrap .eui-up-img-container .eui-up-btn {
+.eui-panel-wrap .eui-up-img-container .eui-up-btn {
   display: inline-block;
   *display: inline;
   *zoom: 1;
@@ -365,10 +365,10 @@
   font-size: 60px;
   line-height: 1;
 }
-.eui-container .eui-panel-wrap .eui-up-img-container .eui-up-btn:hover {
+.eui-panel-wrap .eui-up-img-container .eui-up-btn:hover {
   color: #333;
 }
-.eui-container .eui-panel-wrap .eui-up-img-container .eui-up-btn .eicon {
+.eui-panel-wrap .eui-up-img-container .eui-up-btn .eicon {
   font-size: 60px;
 }
 

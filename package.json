@@ -1,6 +1,6 @@
 {
   "name": "seditor",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "semple editor",
   "main": "lib/seditor.js",
   "directories": {
