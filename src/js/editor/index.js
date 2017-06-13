@@ -132,7 +132,6 @@ class Editor {
         }
 
         const last = children[children.length - 1]
-        console.log(last)
         const html = (last.innerHTML || last.textContent || last).toLowerCase()
         const nodeName = last.nodeName
         if ((html !== '<br>' && html !== '<br\/>') || nodeName !== 'P') {
