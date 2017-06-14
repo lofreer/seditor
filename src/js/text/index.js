@@ -27,7 +27,11 @@ class Text {
         if (!val) {
             return textElem.innerHTML
         } else {
+            if (val.indexOf('<') !== 0) {
+                val = `<p>${val}</p>`
+            }
             textElem.innerHTML = val
+            this.focus()
         }
     }
 
@@ -39,6 +43,7 @@ class Text {
             return textElem.textContent
         } else {
             textElem.innerHTML = `<p>${val}</p>`
+            this.focus()
         }
     }
 
@@ -50,6 +55,23 @@ class Text {
             html = `<p>${html}</p>`
         }
         textElem.insertAdjacentHTML('beforeend', html)
+    }
+
+    // 编辑区聚焦
+    focus(toStart) {
+        const editor = this.editor
+        const textElem = editor.textElem
+        const children = textElem.childNodes
+        if (!children.length) {
+            // 如果编辑器区域无内容，添加一个空行，重新设置选区
+            textElem.appendChild(Vm('p', {}, [Vm('br')]))
+            this.focus()
+            return
+        }
+
+        const last = children[children.length - 1]
+        editor.selection.createRangeByElem(last, !!toStart)
+        editor.selection.restoreSelection()
     }
 
     // 绑定事件
@@ -96,7 +118,7 @@ class Text {
             // 在编辑器区域之内完成点击，取消鼠标滑动到编辑区外面的事件
             textElem.removeEventListener('mouseleave', saveRange)
         })
-    }
+    }    
 
     // 按回车键时的特殊处理
     _enterKeyHandle() {

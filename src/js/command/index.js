@@ -47,7 +47,7 @@ class Command {
         } else if (range.insertNode) {
             // IE
             range.deleteContents()
-            range.insertNode($(html)[0])
+            range.insertNode(html)
         } else if (range.pasteHTML) {
             // IE <= 10
             range.pasteHTML(html)

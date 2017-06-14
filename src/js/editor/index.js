@@ -60,6 +60,9 @@ class Editor {
 
         // 初始化编辑区域内容
         if (defaultContent) {
+            if (defaultContent.indexOf('<') !== 0) {
+                defaultContent = `<p>${defaultContent}</p>`
+            }
             textElem.innerHTML = defaultContent
         } else {
             textElem.appendChild(Vm('p', {}, [
@@ -120,31 +123,6 @@ class Editor {
         this.content.init()
     }
 
-    // 初始化选区
-    _initSelection() {
-        const textElem = this.textElem
-        const children = textElem.childNodes
-        if (!children.length) {
-            // 如果编辑器区域无内容，添加一个空行，重新设置选区
-            textElem.appendChild(Vm('p', {}, [Vm('br')]))
-            this._initSelection()
-            return
-        }
-
-        const last = children[children.length - 1]
-        const html = (last.innerHTML || last.textContent || last).toLowerCase()
-        const nodeName = last.nodeName
-        if ((html !== '<br>' && html !== '<br\/>') || nodeName !== 'P') {
-            // 最后一个元素不是 <p><br></p>，添加一个空行，重新设置选区
-            textElem.append(Vm('p', {}, [Vm('br')]))
-            this._initSelection()
-            return
-        }
-
-        this.selection.createRangeByElem(last, true)
-        this.selection.restoreSelection()
-    }
-
     // 绑定事件
     _bindEvent() {
         // -------- 绑定 onchange 事件 --------
@@ -198,8 +176,8 @@ class Editor {
         // 添加 图片上传
         this._initUploadImg()
 
-        // 初始化选区
-        this._initSelection()
+        // 选区聚焦
+        this.content.focus()
 
         // 绑定事件
         this._bindEvent()
