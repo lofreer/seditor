@@ -24,6 +24,11 @@
         editor.customConfig.onchange = function(html, editor) {
             console.log(editor)
         }
+        editor.customConfig = {
+            uploadImgServer: 'http://127.0.0.1:3002/api/upload/image',
+            // uploadFileName: 'image',
+            debug: true
+        }
         editor.create()
         // editor.content.html('567890')
         console.log(editor)

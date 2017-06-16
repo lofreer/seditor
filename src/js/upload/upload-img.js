@@ -189,24 +189,21 @@ class UploadImg {
                             return
                         }
                     }
-                    if (result.errno != '0') {
+                    if (!result.success) {
                         // hook - fail
                         if (hooks.fail && typeof hooks.fail === 'function') {
                             hooks.fail(xhr, editor, result)
                         }
 
                         // 数据错误
-                        this._alert('上传图片失败', '上传图片返回结果错误，返回结果 errno=' + result.errno)
+                        this._alert('上传图片失败', '上传图片返回结果错误，返回结果 errorCode=' + result.errorCode)
                     } else {
                         if (hooks.customInsert && typeof hooks.customInsert === 'function') {
                             // 使用者自定义插入方法
                             hooks.customInsert(this.insertLinkImg.bind(this), result, editor)
                         } else {
                             // 将图片插入编辑器
-                            const data = result.data || []
-                            data.forEach(link => {
-                                this.insertLinkImg(link)
-                            })
+                            this.insertLinkImg(result.url)
                         }
 
                         // hook - success
