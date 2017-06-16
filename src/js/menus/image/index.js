@@ -59,6 +59,8 @@ class Image {
                             const img = editor._selectedImg
                             if (img) {
                                 img.style.maxWidth = '30%'
+                                // 触发 onchange
+                                editor.change && editor.change(true)
                             }
                             // 返回 true，表示该事件执行完之后，panel 要关闭。否则 panel 不会关闭
                             return true
@@ -71,6 +73,8 @@ class Image {
                             const img = editor._selectedImg
                             if (img) {
                                 img.style.maxWidth = '50%'
+                                // 触发 onchange
+                                editor.change && editor.change(true)
                             }
                             // 返回 true，表示该事件执行完之后，panel 要关闭。否则 panel 不会关闭
                             return true
@@ -83,6 +87,8 @@ class Image {
                             const img = editor._selectedImg
                             if (img) {
                                 img.style.maxWidth = '100%'
+                                // 触发 onchange
+                                editor.change && editor.change(true)
                             }
                             // 返回 true，表示该事件执行完之后，panel 要关闭。否则 panel 不会关闭
                             return true

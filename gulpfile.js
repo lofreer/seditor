@@ -86,7 +86,7 @@ gulp.task('scripts', () => {
             // inline css
             .pipe(gulpReplace(/__INLINE_CSS__/gm, function () {
                 // 读取 css 文件内容
-                var filePath = path.resolve(__dirname, 'lib', 'seditor.css')
+                var filePath = path.resolve(__dirname, 'lib', 'seditor.min.css')
                 var content = fs.readFileSync(filePath).toString('utf-8')
                 // 替换 \n \ ' 三个字符
                 content = content.replace(/\n/g, '').replace(/\\/g, '\\\\').replace(/'/g, '\\\'')

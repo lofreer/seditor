@@ -135,10 +135,11 @@ class Editor {
             // 1. textContainerElem event 'click keyup'
             // 2. toolbarElem.event 'click'
             // 3. editor.cmd.do()
-            this.change = function () {
+            this.change = function (isChange) {
                 // 判断是否有变化
                 const currentHtml = this.content.html()
-                if (currentHtml.length === beforeChangeHtml.length) return
+                // 如果指定改变，则不必判断 应用场景：比如图片改变宽度值
+                if (!isChange && currentHtml.length === beforeChangeHtml.length) return
 
                 // 执行，使用节流
                 if (onChangeTimeoutId) {
