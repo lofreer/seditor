@@ -46,6 +46,11 @@ export function getPasteHtml(e) {
     // 过滤样式
     pasteHtml = pasteHtml.replace(/\s?(class|style)=('|").+?('|")/igm, '')
 
+    // img设置最大宽度
+    pasteHtml = pasteHtml.replace(/<img.*?(?:>|\/>)/igm, (v) => {
+        return v.replace('<img', '<img style="max-width: 100%;"')
+    })
+
     return pasteHtml
 }
 
